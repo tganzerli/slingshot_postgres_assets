@@ -1,8 +1,8 @@
 name: slingshot_postgres_assets
 description: >
-  Opt-in build hook that bundles the pre-built native library of
-  slingshot_postgres, so `dart build cli` ships it next to the executable.
-  Adding it disables `dart compile exe` for the app.
+  Opt-in build hook that bundles the pre-built slingshot_postgres native
+  library, so `dart build cli` ships it with the executable. Disables
+  `dart compile exe` for the app.
 version: 0.1.0
 
 repository: https://github.com/tganzerli/slingshot_postgres_assets

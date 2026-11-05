@@ -31,17 +31,13 @@ void main() {
   final shipsBinaries = supportedPlatformDirs.any(
     (d) => Directory('${native.path}$d').existsSync(),
   );
-  test(
-    'ships libnative_db for every supported platform',
-    () {
-      for (final dir in supportedPlatformDirs) {
-        final os = dir.startsWith('macos') ? OS.macOS : OS.linux;
-        final file = File(
-          '${native.path}$dir/${os.dylibFileName('native_db')}',
-        );
-        expect(file.existsSync(), isTrue, reason: file.path);
-      }
-    },
-    skip: shipsBinaries ? false : 'no pre-built binaries in this checkout',
-  );
+  final skip = shipsBinaries ? false : 'no pre-built binaries in this checkout';
+  test('ships libnative_db for every platform', () {
+    for (final dir in supportedPlatformDirs) {
+      final os = dir.startsWith('macos') ? OS.macOS : OS.linux;
+      final name = os.dylibFileName('native_db');
+      final file = File('${native.path}$dir/$name');
+      expect(file.existsSync(), isTrue, reason: file.path);
+    }
+  }, skip: skip);
 }
