@@ -1,3 +1,8 @@
+## 0.1.3
+
+- Bundles the native library of `slingshot_postgres` 0.1.14 (ABI 2.8: several Extended statements in one
+  round-trip, `executeBatch`). No change to the build hook.
+
 ## 0.1.2
 
 - Bundles the native library of `slingshot_postgres` 0.1.13 (ABI 2.7: the per-connection prepared
