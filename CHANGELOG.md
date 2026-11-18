@@ -1,3 +1,9 @@
+## 0.1.2
+
+- Bundles the native library of `slingshot_postgres` 0.1.13 (ABI 2.7: the per-connection prepared
+  statement cache, and a timed-out statement drained instead of leaving the connection unusable). No change
+  to the build hook.
+
 ## 0.1.1
 
 - Bundles the native library of `slingshot_postgres` 0.1.11, rebuilt with the fix that reports a server FATAL
